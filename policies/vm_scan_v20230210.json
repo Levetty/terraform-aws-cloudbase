@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "ec2:DescribeRegions",
+        "ec2:DescribeInstances",
+        "ec2:DescribeSnapshots",
+        "ec2:CreateTags",
+        "ec2:CreateSnapshots",
+        "ec2:CreateSnapshot",
+        "ec2:CopySnapshot"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/created-by-cloudbase": "true"
+        }
+      },
+      "Action": [
+        "ebs:GetSnapshotBlock",
+        "ebs:ListSnapshotBlocks",
+        "ec2:DeleteSnapshot"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Condition": {
+        "StringLike": {
+          "kms:RequestAlias": "alias/aws/ebs"
+        }
+      },
+      "Action": [
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:DescribeKey",
+        "kms:CreateGrant"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    }
+  ]
+}
