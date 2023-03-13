@@ -1,0 +1,61 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/created-by-cloudbase": "*"
+        }
+      },
+      "Action": [
+        "ec2:DeleteSnapshot",
+        "ec2:ModifySnapshotAttribute"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:CreateTags",
+        "ec2:DescribeRegions",
+        "ec2:CreateSnapshot",
+        "ec2:CreateSnapshots",
+        "ec2:DescribeSnapshots",
+        "ec2:CopySnapshot"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Condition": {
+        "StringLike": {
+          "kms:GranteePrincipal": "ec2.*.amazonaws.com",
+          "kms:EncryptionContext:aws:ebs:id": "snap-*"
+        },
+        "ForAllValues:StringEquals": {
+          "kms:GrantOperations": [
+            "Decrypt"
+          ]
+        }
+      },
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "kms:Decrypt",
+        "kms:ReEncryptTo",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:DescribeKey",
+        "kms:CreateGrant",
+        "kms:ReEncryptFrom"
+      ],
+      "Resource": "${sharedKmsArn}",
+      "Effect": "Allow"
+    }
+  ]
+}
