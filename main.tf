@@ -44,11 +44,9 @@ resource "aws_iam_role_policy" "cloudbase_container_scan_policy" {
   policy = file("${path.module}/policies/container_scan_v20230210.json")
 }
 
-resource "aws_iam_role_policy" "cloudbase_vm_scan_policy" {
+module "vm_scan" {
   count = var.allow_vm_scan_permissions ? 1 : 0
-
-  name = "CloudbaseVMScanPolicy"
-  role = aws_iam_role.cloudbase_role.id
-
-  policy = file("${path.module}/policies/vm_scan_v20230210.json")
+  source = "./module/vm_scan"
+  base_iam_role_id = aws_iam_role.cloudbase_role.id
+  kms_key_alias = "alias/${var.role_name}"
 }
