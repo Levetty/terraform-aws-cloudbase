@@ -11,10 +11,15 @@ variable "role_name" {
 
 variable "allow_container_scan_permissions" {
   default     = false
-  description = "(optional) allow actions needed to scan container image. e.g) ecr:BatchGetImage"
+  description = "(optional) allow actions needed to scan container images. e.g) ecr:BatchGetImage"
 }
 
 variable "allow_vm_scan_permissions" {
   default     = false
-  description = "(optional) allow actions needed to scan container image. e.g) ec2:CreateSnapshots"
+  description = "(optional) allow actions needed to scan virtual machines. e.g) ec2:CreateSnapshots"
+}
+
+variable "allow_function_scan_permissions" {
+  default     = false
+  description = "(optional) allow actions needed to scan lambda functions. e.g) lambda:GetFunction"
 }

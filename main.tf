@@ -32,7 +32,7 @@ resource "aws_iam_role_policy" "cloudbase_cspm_read_policy" {
   name = "CloudbaseReadPolicy"
   role = aws_iam_role.cloudbase_role.id
 
-  policy = file("${path.module}/policies/cspm_read_v20230210.json")
+  policy = file("${path.module}/policies/cspm_read_v20230322.json")
 }
 
 resource "aws_iam_role_policy" "cloudbase_container_scan_policy" {
@@ -45,8 +45,17 @@ resource "aws_iam_role_policy" "cloudbase_container_scan_policy" {
 }
 
 module "vm_scan" {
-  count = var.allow_vm_scan_permissions ? 1 : 0
-  source = "./module/vm_scan"
+  count            = var.allow_vm_scan_permissions ? 1 : 0
+  source           = "./module/vm_scan"
   base_iam_role_id = aws_iam_role.cloudbase_role.id
-  kms_key_alias = "alias/${var.role_name}"
+  kms_key_alias    = "alias/${var.role_name}"
+}
+
+resource "aws_iam_role_policy" "cloudbase_function_scan_policy" {
+  count = var.allow_function_scan_permissions ? 1 : 0
+
+  name = "CloudbaseLambdaScanPolicy"
+  role = aws_iam_role.cloudbase_role.id
+
+  policy = file("${path.module}/policies/lambda_scan_v20230322.json")
 }
