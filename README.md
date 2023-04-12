@@ -7,9 +7,9 @@ terraform aws module for cloudbase
 ### Allow only CPSM read actions
 
 ```
-module "cloudbase_role_read_only" {
+module "cloudbase_role" {
   source  = "Levetty/cloudbase/aws"
-  version = "0.3.0"
+  version = "0.4.0"
 
   external_id = "xxx" # required
   role_name   = "Cloudbase" # optional: default value is "Cloudbase"
@@ -23,9 +23,9 @@ module "cloudbase_role_read_only" {
 ### Allow CPSM read actions and container scan actions
 
 ```
-module "cloudbase_role_read_only" {
+module "cloudbase_role" {
   source  = "Levetty/cloudbase/aws"
-  version = "0.3.0"
+  version = "0.4.0"
 
   external_id = "xxx" # required
   role_name   = "Cloudbase" # optional: default value is "Cloudbase"
@@ -39,9 +39,9 @@ module "cloudbase_role_read_only" {
 ### Allow all scan actions
 
 ```
-module "cloudbase_role_read_only" {
+module "cloudbase_role" {
   source  = "Levetty/cloudbase/aws"
-  version = "0.3.0"
+  version = "0.4.0"
 
   external_id = "xxx" # required
   role_name   = "Cloudbase" # optional: default value is "Cloudbase"
