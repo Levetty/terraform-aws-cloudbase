@@ -32,7 +32,7 @@ resource "aws_iam_role_policy" "cloudbase_cspm_read_policy" {
   name = "CloudbaseReadPolicy"
   role = aws_iam_role.cloudbase_role.id
 
-  policy = file("${path.module}/policies/cspm_read_v20230322.json")
+  policy = file("${path.module}/policies/cspm_read_v20230428.json")
 }
 
 resource "aws_iam_role_policy" "cloudbase_container_scan_policy" {
