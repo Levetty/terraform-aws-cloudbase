@@ -3,6 +3,8 @@
   "Statement": [
     {
       "Action": [
+        "account:GetAccountInformation",
+        "account:GetAlternateContact",
         "airflow:ListEnvironments",
         "apigateway:GET",
         "appflow:DescribeFlow",
@@ -53,7 +55,6 @@
         "kms:ListAliases",
         "kms:ListKeys",
         "kms:ListResourceTags",
-        "lambda:GetFunction",
         "lambda:GetFunctionCodeSigningConfig",
         "lex:DescribeBot",
         "lex:DescribeBotVersion",
@@ -101,7 +102,21 @@
         "waf:ListSubscribedRuleGroups",
         "wafv2:DescribeManagedRuleGroup",
         "wafv2:GetWebACLForResource",
-        "wisdom:ListAssistants"
+        "wisdom:ListAssistants",
+        "network-firewall:ListFirewallPolicies",
+        "network-firewall:ListRuleGroups",
+        "lambda:GetFunction",
+        "wafv2:GetLoggingConfiguration",
+        "wafv2:GetRuleGroup",
+        "waf-regional:GetLoggingConfiguration",
+        "waf-regional:GetRuleGroup",
+        "waf:GetLoggingConfiguration",
+        "waf:GetRuleGroup",
+        "lambda:GetRuntimeManagementConfig",
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:DescribeBackupPolicy",
+        "ecs:GetTaskProtection",
+        "securityhub:GetFindings"
       ],
       "Resource": "*",
       "Effect": "Allow"
