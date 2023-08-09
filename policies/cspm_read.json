@@ -56,7 +56,6 @@
         "kms:ListAliases",
         "kms:ListKeys",
         "kms:ListResourceTags",
-        "lambda:GetFunction",
         "lambda:GetFunctionCodeSigningConfig",
         "lambda:GetRuntimeManagementConfig",
         "lex:DescribeBot",
