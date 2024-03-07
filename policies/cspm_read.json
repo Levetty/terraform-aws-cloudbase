@@ -88,6 +88,7 @@
         "memorydb:DescribeClusters",
         "network-firewall:ListFirewallPolicies",
         "network-firewall:ListRuleGroups",
+        "organizations:DescribeOrganization",
         "profile:ListDomains",
         "proton:ListEnvironmentTemplates",
         "qldb:ListLedgers",
