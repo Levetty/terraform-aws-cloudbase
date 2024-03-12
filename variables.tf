@@ -23,3 +23,8 @@ variable "allow_function_scan_permissions" {
   default     = false
   description = "(optional) allow actions needed to scan lambda functions. e.g) lambda:GetFunction"
 }
+
+variable "allow_cloudtrail_read_permissions" {
+  default     = false
+  description = "(optional) allow managed Policy AWSCloudTrail_ReadOnlyAccess"
+}
