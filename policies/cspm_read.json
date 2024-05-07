@@ -19,6 +19,7 @@
         "backup:ListBackupVaults",
         "codeartifact:ListDomains",
         "codebuild:ListSourceCredentials",
+        "codeconnections:ListConnections",
         "codepipeline:ListWebhooks",
         "connect:ListInstances",
         "databrew:ListJobs",
