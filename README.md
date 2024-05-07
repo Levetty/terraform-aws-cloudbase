@@ -9,7 +9,7 @@ terraform aws module for cloudbase
 ```
 module "cloudbase" {
   source  = "Levetty/cloudbase/aws"
-  version = "0.8.0"
+  version = "0.9.0"
 
   external_id = "xxx" # required
   role_name   = "Cloudbase" # optional: default value is "Cloudbase"
@@ -26,7 +26,7 @@ module "cloudbase" {
 ```
 module "cloudbase" {
   source  = "Levetty/cloudbase/aws"
-  version = "0.8.0"
+  version = "0.9.0"
 
   external_id = "xxx" # required
   role_name   = "Cloudbase" # optional: default value is "Cloudbase"
@@ -43,7 +43,7 @@ module "cloudbase" {
 ```
 module "cloudbase" {
   source  = "Levetty/cloudbase/aws"
-  version = "0.8.0"
+  version = "0.9.0"
 
   external_id = "xxx" # required
   role_name   = "Cloudbase" # optional: default value is "Cloudbase"
