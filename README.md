@@ -1,6 +1,6 @@
 # terraform-aws-cloudbase
 
-terraform aws module for cloudbase
+Terraform aws module for Cloudbase
 
 ## Usage
 

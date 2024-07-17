@@ -25,7 +25,7 @@ resource "aws_iam_role" "cloudbase_role" {
 }
 
 resource "aws_iam_role_policy_attachment" "cloudbase_security_audit_policy" {
-  role = aws_iam_role.cloudbase_role.id
+  role       = aws_iam_role.cloudbase_role.id
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
 
@@ -64,7 +64,7 @@ resource "aws_iam_role_policy" "cloudbase_function_scan_policy" {
 resource "aws_iam_role_policy_attachment" "cloudbase_cloudtrail_read_policy" {
   count = var.allow_cloudtrail_read_permissions ? 1 : 0
 
-  role = aws_iam_role.cloudbase_role.id
+  role       = aws_iam_role.cloudbase_role.id
   policy_arn = "arn:aws:iam::aws:policy/AWSCloudTrail_ReadOnlyAccess"
 }
 
