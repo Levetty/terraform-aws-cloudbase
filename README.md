@@ -19,6 +19,11 @@ module "cloudbase" {
   allow_function_scan_permissions   = false # optional: if true, allow actions needed to scan lambda functions. e.g) lambda:GetFunction
   allow_cloudtrail_read_permissions = false # optional: if true, allow managed policy AWSCloudTrail_ReadOnlyAccess
 }
+
+output cloudbase_role_arn {
+  value       = module.cloudbase.role_arn
+  description = "For input Cloudbase console."
+}
 ```
 
 ### Allow CPSM read actions and container scan actions
@@ -36,6 +41,11 @@ module "cloudbase" {
   allow_function_scan_permissions   = false # optional: if true, allow actions needed to scan lambda functions. e.g) lambda:GetFunction
   allow_cloudtrail_read_permissions = false # optional: if true, allow managed policy AWSCloudTrail_ReadOnlyAccess
 }
+
+output cloudbase_role_arn {
+  value       = module.cloudbase.role_arn
+  description = "For input Cloudbase console."
+}
 ```
 
 ### Allow all scan actions
@@ -52,5 +62,10 @@ module "cloudbase" {
   allow_vm_scan_permissions         = true # optional: if true, allow actions needed to scan virtual machines. e.g) ec2:CreateSnapshots
   allow_function_scan_permissions   = true # optional: if true, allow actions needed to scan lambda functions. e.g) lambda:GetFunction
   allow_cloudtrail_read_permissions = true # optional: if true, allow managed policy AWSCloudTrail_ReadOnlyAccess
+}
+
+output cloudbase_role_arn {
+  value       = module.cloudbase.role_arn
+  description = "For input Cloudbase console."
 }
 ```

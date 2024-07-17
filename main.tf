@@ -67,3 +67,8 @@ resource "aws_iam_role_policy_attachment" "cloudbase_cloudtrail_read_policy" {
   role = aws_iam_role.cloudbase_role.id
   policy_arn = "arn:aws:iam::aws:policy/AWSCloudTrail_ReadOnlyAccess"
 }
+
+output "role_arn" {
+  value       = aws_iam_role.cloudbase_role.arn
+  description = "The ARN of the IAM role created for Cloudbase."
+}
