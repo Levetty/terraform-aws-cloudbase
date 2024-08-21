@@ -9,6 +9,12 @@ variable "role_name" {
   description = "(optional) Role name to connect Cloudbase"
 }
 
+variable "cspm_policy_prefix" {
+  type        = string
+  default     = "CloudbaseCSPMPolicy_"
+  description = "(optional) Policy name prefix to connect Cloudbase"
+}
+
 variable "allow_container_scan_permissions" {
   default     = false
   description = "(optional) allow actions needed to scan container images. e.g) ecr:BatchGetImage"
