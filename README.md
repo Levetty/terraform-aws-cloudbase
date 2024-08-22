@@ -10,8 +10,9 @@ Terraform aws module for Cloudbase
 module "cloudbase" {
   source  = "Levetty/cloudbase/aws"
 
-  external_id = "xxx" # required
-  role_name   = "Cloudbase" # optional: default value is "Cloudbase"
+  external_id        = "xxx" # required
+  role_name          = "Cloudbase" # optional: default value is "Cloudbase"
+  cspm_policy_prefix = "CloudbaseCSPMPolicy_" # optional: default value is "CloudbaseCSPMPolicy_"
 
   allow_container_scan_permissions  = false # optional: if true, allow actions needed to scan container images. e.g) ecr:BatchGetImage
   allow_vm_scan_permissions         = false # optional: if true, allow actions needed to scan virtual machines. e.g) ec2:CreateSnapshots
@@ -31,8 +32,9 @@ output cloudbase_role_arn {
 module "cloudbase" {
   source  = "Levetty/cloudbase/aws"
 
-  external_id = "xxx" # required
-  role_name   = "Cloudbase" # optional: default value is "Cloudbase"
+  external_id        = "xxx" # required
+  role_name          = "Cloudbase" # optional: default value is "Cloudbase"
+  cspm_policy_prefix = "CloudbaseCSPMPolicy_" # optional: default value is "CloudbaseCSPMPolicy_"
 
   allow_container_scan_permissions  = true  # optional: if true, allow actions needed to scan container images. e.g) ecr:BatchGetImage
   allow_vm_scan_permissions         = false # optional: if true, allow actions needed to scan virtual machines. e.g) ec2:CreateSnapshots
@@ -52,8 +54,9 @@ output cloudbase_role_arn {
 module "cloudbase" {
   source  = "Levetty/cloudbase/aws"
 
-  external_id = "xxx" # required
-  role_name   = "Cloudbase" # optional: default value is "Cloudbase"
+  external_id        = "xxx" # required
+  role_name          = "Cloudbase" # optional: default value is "Cloudbase"
+  cspm_policy_prefix = "CloudbaseCSPMPolicy_" # optional: default value is "CloudbaseCSPMPolicy_"
 
   allow_container_scan_permissions  = true # optional: if true, allow actions needed to scan container images. e.g) ecr:BatchGetImage
   allow_vm_scan_permissions         = true # optional: if true, allow actions needed to scan virtual machines. e.g) ec2:CreateSnapshots

@@ -29,11 +29,17 @@ resource "aws_iam_role_policy_attachment" "cloudbase_security_audit_policy" {
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
 
-resource "aws_iam_role_policy" "cloudbase_cspm_read_policy" {
-  name = "CloudbaseReadPolicy"
-  role = aws_iam_role.cloudbase_role.id
+resource "aws_iam_role_policy_attachment" "cloudbase_cspm_read_policy" {
+  count      = 4
+  role       = aws_iam_role.cloudbase_role.id
+  policy_arn = aws_iam_policy.cloudbase_cspm_read_policy[count.index].arn
+}
 
-  policy = file("${path.module}/policies/cspm_read.json")
+resource "aws_iam_policy" "cloudbase_cspm_read_policy" {
+  count = 4
+  name  = "${var.cspm_policy_prefix}${count.index}"
+
+  policy = file("${path.module}/policies/cspm_read_${count.index}.json")
 }
 
 resource "aws_iam_role_policy" "cloudbase_container_scan_policy" {
