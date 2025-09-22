@@ -29,13 +29,25 @@
     },
     {
       "Condition": {
+        "Bool": {
+          "kms:GrantIsForAWSResource": "true"
+        },
         "StringLike": {
           "kms:GranteePrincipal": "ec2.*.amazonaws.com",
-          "kms:EncryptionContext:aws:ebs:id": "snap-*"
+          "kms:EncryptionContext:aws:ebs:id": [
+            "snap-*",
+            "vol-*"
+          ]
         },
         "ForAllValues:StringEquals": {
           "kms:GrantOperations": [
             "Decrypt"
+          ]
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:GrantConstraintType": [
+            "EncryptionContextEquals",
+            "EncryptionContextSubset"
           ]
         }
       },
