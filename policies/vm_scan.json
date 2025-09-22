@@ -33,11 +33,11 @@
           "kms:GrantIsForAWSResource": "true"
         },
         "StringLike": {
-          "kms:GranteePrincipal": "ec2.*.amazonaws.com",
           "kms:EncryptionContext:aws:ebs:id": [
             "snap-*",
             "vol-*"
-          ]
+          ],
+          "kms:ViaService": "ec2.*.amazonaws.com"
         },
         "ForAllValues:StringEquals": {
           "kms:GrantOperations": [
