@@ -57,6 +57,7 @@
         "elasticbeanstalk:ValidateConfigurationSettings",
         "elasticfilesystem:DescribeAccessPoints",
         "elasticfilesystem:ListTagsForResource",
+        "elasticmapreduce:List*",
         "elastictranscoder:List*",
         "elastictranscoder:ReadPipeline",
         "elastictranscoder:ReadPreset",
