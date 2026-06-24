@@ -113,6 +113,8 @@
         "glue:BatchGetWorkflows",
         "glue:GetClassifier",
         "glue:GetClassifiers",
+        "glue:GetConnection",
+        "glue:GetConnections",
         "glue:GetCrawler",
         "glue:GetDatabase",
         "glue:GetDevEndpoint",
