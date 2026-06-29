@@ -3,6 +3,19 @@
   "Statement": [
     {
       "Action": [
+        "route53profiles:GetProfile",
+        "route53profiles:GetProfileAssociation",
+        "route53profiles:GetProfileResourceAssociation",
+        "route53profiles:List*",
+        "rum:GetAppMonitor",
+        "rum:ListAppMonitors",
+        "s3-object-lambda:GetObjectAcl",
+        "s3-object-lambda:GetObjectLegalHold",
+        "s3-object-lambda:GetObjectRetention",
+        "s3-object-lambda:GetObjectTagging",
+        "s3-object-lambda:GetObjectVersionAcl",
+        "s3-object-lambda:GetObjectVersionTagging",
+        "s3-object-lambda:List*",
         "s3-outposts:GetAccessPoint",
         "s3-outposts:GetAccessPointPolicy",
         "s3-outposts:GetBucket",
