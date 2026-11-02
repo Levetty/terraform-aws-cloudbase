@@ -64,6 +64,7 @@
         "securityhub:BatchGetStandardsControlAssociations",
         "securityhub:GetFindings",
         "servicecatalog:Describe*",
+        "servicecatalog:GetAWSOrganizationsAccessStatus",
         "servicecatalog:GetApplication",
         "servicecatalog:GetAttributeGroup",
         "servicecatalog:List*",
