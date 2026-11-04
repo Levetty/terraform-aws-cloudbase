@@ -152,6 +152,7 @@
         "codeguru-reviewer:List*",
         "codepipeline:GetActionType",
         "codepipeline:List*",
+        "cognito-idp:List*",
         "connect:Describe*",
         "connect:List*",
         "databrew:Describe*",
@@ -194,6 +195,16 @@
         "dynamodb:List*"
       ],
       "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "cassandra:Select"
+      ],
+      "Resource": [
+        "arn:aws:cassandra:*:*:/keyspace/system_schema_mcs/*",
+        "arn:aws:cassandra:*:*:/keyspace/system_multiregion_info/*"
+      ],
       "Effect": "Allow"
     }
   ]
