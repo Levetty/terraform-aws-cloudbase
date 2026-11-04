@@ -137,6 +137,7 @@
         "networkmanager:GetVpcAttachment",
         "networkmanager:List*",
         "profile:ListDomains",
+        "profile:ListProfileObjectTypes",
         "proton:GetDeployment",
         "proton:GetEnvironment",
         "proton:GetEnvironmentTemplate",
